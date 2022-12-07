@@ -16,27 +16,31 @@ let atletas = [
     notas: [10, 10, 10, 9, 9.5]
   }
  ];
- 
-//declaração de variáveis
 
-for (let i = 0; i < atletas.length; i++) {
-    // O código que vai aqui será executado
-    // uma vez para cada item da matriz
-
-    let soma = 0
-    let media = 0
-    let notas = atletas[i].notas.sort()
-    let notasComputadas = notas.slice(1,4)
+function obtemNotasAtleta() {
+    for (let i = 0; i < atletas.length; i++) {
+        // O código que vai aqui será executado
+        // uma vez para cada item da matriz
     
-    notasComputadas.forEach(function(nota) {
-        soma = soma + nota
-    })
-    media = soma / notasComputadas.length
-    
-    console.log("Atleta: " + atletas[i].nome)
-    console.log("Notas Obtidas: " + notas)
-    console.log("Média Válida: " + media)
+        //declaração de variáveis
+        let soma = 0
+        let media = 0
+        let notas = atletas[i].notas.sort()
+        let notasComputadas = notas.slice(1,4)
+        
+        notasComputadas.forEach(function(nota) {
+            soma = soma + nota
+        })
+        media = soma / notasComputadas.length
+        
+        console.log("Atleta: " + atletas[i].nome)
+        console.log("Notas Obtidas: " + notas)
+        console.log("Média Válida: " + media)
+        console.log("")
+    }
 }
+
+obtemNotasAtleta()
 
 
 // Atleta: Cesar Abascal
